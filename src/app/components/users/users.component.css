@@ -2,3 +2,53 @@
     font-family: 'Acme', sans-serif;
     margin: 50px;
 }
+
+.displayUsers {
+    display: flex;
+    flex-direction: column;
+}
+
+.addUser{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.addUser p {
+    font-size: 30px;    
+}
+
+.addUserForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.addUser input {
+    padding: 5px;
+    margin: 10px;
+}
+
+.btn {
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.btn:hover, .button:hover {
+    background-color: #9da6b5;
+}
+
+.button {
+    font-size: 30px;
+    background-color: white;
+    padding: 5px;
+}
+
+.deleteUser {
+    background-color: red;
+}
+
+.usersLi {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}

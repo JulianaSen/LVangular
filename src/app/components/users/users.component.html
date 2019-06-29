@@ -1,8 +1,20 @@
 <main class="users">
-    <h3>All registered users:</h3>
-    <ul>
-        <li>
-            
-        </li>
-    </ul>
+    <div class="displayUsers">
+        <button class="button" (click)="displayUsers()">Display users</button>
+        <ul>
+            <li class="usersLi" *ngFor="let user of userNames">
+                {{user}}
+                <button class="deleteUser" (click)="deleteUser(user)">Delete</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="addUser">
+        <button class="button" (click)="showForm()">Add user</button>
+        <form *ngIf=isAdded class="addUserForm" (submit)="addUser(user.value, pass.value)">
+            <input type="text" placeholder="userName" #user>
+            <input type="text" placeholder="password" #pass>
+            <button class="btn" type="submit">Add</button>
+        </form>
+    </div>
 </main>
