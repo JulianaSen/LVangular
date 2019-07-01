@@ -1,6 +1,8 @@
 .users {
-    font-family: 'Acme', sans-serif;
     margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .displayUsers {
@@ -21,34 +23,59 @@
 .addUserForm {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .addUser input {
     padding: 5px;
     margin: 10px;
+    border-radius: 7px;
+    opacity: 0.8;
+    width: 250px;
 }
 
 .btn {
-    border: 2px solid black;
     padding: 5px;
+    background-color: black;
+    border-radius: 15px;
+    color: #f3f3f3;
+    opacity: 0.8;
+    width: 100px;
+    width: 250px;
 }
 
 .btn:hover, .button:hover {
-    background-color: #9da6b5;
+    color: #9da6b5;
 }
 
 .button {
     font-size: 30px;
-    background-color: white;
+    background-color: black;
+    color: #f3f3f3;
     padding: 5px;
+    opacity: 0.8;
+    border-radius: 15px;
+    width: 300px;
 }
 
 .deleteUser {
     background-color: red;
+    opacity: 0.7;
+}
+
+.deleteUser:hover {
+    opacity: 1;
 }
 
 .usersLi {
+    width: 250px;
     display: flex;
-    justify-content: space-around;
-    margin: 10px;
+    justify-content: space-between;
+    background-color: white;
+    margin: 20px;
+    margin-left: -10px;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
 }

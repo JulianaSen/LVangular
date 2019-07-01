@@ -1,24 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Acme|Lobster&display=swap');
 
+.body {
+    font-family: 'Acme', sans-serif;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f3f3f3;
+}
+
+.header {
+    height: 60px;
+    background-color: black;
+}
+
 .navbar {
     font-family: 'Acme', sans-serif;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
-    background-color: white;
-    opacity: 0.6;
+    opacity: 0.8;
     z-index: 1;
-    border: 2px solid black;
-}
-
-.navbar ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: white;
-    opacity: 0.6;
+    margin-bottom: 0;
+    padding: 17px;
+    font-size: 17px;
 }
 
 .navbar .navbarLi {
@@ -26,7 +30,6 @@
 }
 
 .navbarLi {
-    color: black;
     text-align: center;
     text-decoration: none;
     margin-left: 20px;
@@ -38,35 +41,14 @@
     justify-content: flex-end;		   
     text-align: center;		 
     align-items: center;		
-    padding-right: 15px;		
+    padding-right: 15px;	 
 }
 
-.navbarLi a:hover{
-    background-color: #9da6b5;
+.nav-cng li {
+    color: white;
+}
+
+.nav-cng li:hover{
+    color: #9da6b5;
     cursor: pointer;
-}
-
-.nav-cng .navbarLi a:hover {
-    height: 100%;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.logo {
-    width: 45px;
-    height: 45px;
-    margin: 10px;
-}
-
-.nav-cng{
-    display: flex;
-    justify-content: flex-end;
-    text-align: center;
-    align-items: center;
-    padding-right: 15px;
-}
-
-.navbarLi:hover{
-    cursor: pointer;
-    background-color: #9da6b5;
 }
