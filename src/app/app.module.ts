@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { UsersComponent } from './components/users/users.component';
 
+import { UsersService } from './users.service';
+import { HttpClientModule } from '@angular/common/http';
+
 const appRoutes:Routes = [
   {path: '', component: AdminPageComponent},
   {path: 'users', component: UsersComponent}
@@ -21,9 +24,10 @@ const appRoutes:Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

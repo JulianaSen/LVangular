@@ -1,9 +1,17 @@
 <main class="users">
     <div class="displayUsers">
-        <button class="button" (click)="displayUsers()">Display users</button>
-        <ul class="usersUl">
+        <!-- <button class="button" (click)="displayUsers()">Display users</button> -->
+        <!-- <ul class="usersUl">
             <li class="usersLi" *ngFor="let user of userNames">
                 {{user}}
+                <button class="deleteUser" (click)="deleteUser(user)">x</button>
+            </li>
+        </ul> -->
+
+        <button class="button">Users</button>
+        <ul class="usersUl">
+            <li class="usersLi" *ngFor="let user of users.users">
+                {{user.username}}
                 <button class="deleteUser" (click)="deleteUser(user)">x</button>
             </li>
         </ul>
