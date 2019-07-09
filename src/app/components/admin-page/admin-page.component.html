@@ -1,4 +1,20 @@
 <main class="welcome">
-    <h1> Welcome, Admin! </h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quaerat omnis animi, quidem necessitatibus hic voluptates iusto dignissimos commodi voluptatibus, inventore libero deserunt voluptatum doloribus facilis architecto adipisci soluta in.</p>
+    <h1> Posts: </h1>
+    <div class="displayUsers">
+        <ul class="usersUl">
+            <li class="usersLi" *ngFor="let post of posts.items">
+                {{post.name}}
+                {{post.type_content}}
+                {{post.price}}
+                {{post.destination}}
+                {{post.smoking}}
+                {{post.wi_fi}}
+                {{post.description}}
+                {{post.rating}}
+                {{post.mobile_phone}}
+                {{post.price}}
+                <button class="deleteUser" (click)="deletePost(post.id)">x</button>
+            </li>
+        </ul>
+    </div>
 </main>

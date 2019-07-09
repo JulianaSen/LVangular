@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { UsersComponent } from './components/users/users.component';
 
-import { UsersService } from './users.service';
+import { UsersService } from '../services/users.service';
 import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes:Routes = [

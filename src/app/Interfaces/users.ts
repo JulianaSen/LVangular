@@ -3,6 +3,5 @@ export interface IUser {
     first_name: string, 
     last_name: string,
     username: string,
-    password_hash: string,
-    name: string
+    password_hash: string
 }

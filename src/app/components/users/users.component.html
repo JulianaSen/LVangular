@@ -8,11 +8,14 @@
             </li>
         </ul> -->
 
-        <button class="button">Users</button>
+        <button class="button">Users:</button>
         <ul class="usersUl">
             <li class="usersLi" *ngFor="let user of users.users">
+                {{user.first_name}}
+                {{user.last_name}}
                 {{user.username}}
-                <button class="deleteUser" (click)="deleteUser(user)">x</button>
+                {{user.password_hash}}
+                <button class="deleteUser" (click)="deleteUser(user.id)">x</button>
             </li>
         </ul>
     </div>
