@@ -9,5 +9,6 @@ export interface IContent {
     rating: number,
     mobile_phone: number,
     image: string,
-    price: number
+    price: number,
+    whatIsIt: string
 }
