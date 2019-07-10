@@ -29,9 +29,9 @@ export class AdminPageComponent implements OnInit {
     });
   }
 
-  addNewPost(newPost) {
-    this._usersService.addPost(newPost).subscribe();
-  }
+  // addNewPost(newPost) {
+  //   this._usersService.addPost(newPost).subscribe();
+  // }
 
   ngOnInit() {
     this.showPosts();
