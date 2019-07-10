@@ -31,4 +31,8 @@ export class UsersService {
   deletePost(post_id): Observable<{}>  {
     return this.http.delete(this._urlContentById + "/" + post_id);
   }
+
+  addPost(post: IContent): Observable<IContent> {
+    return this.http.post<IContent>(this._urlContent, post);
+  }
 }

@@ -1,20 +1,68 @@
-<main class="welcome">
-    <h1> Posts: </h1>
-    <div class="displayUsers">
-        <ul class="usersUl">
-            <li class="usersLi" *ngFor="let post of posts.items">
-                {{post.name}}
-                {{post.type_content}}
-                {{post.price}}
-                {{post.destination}}
-                {{post.smoking}}
-                {{post.wi_fi}}
-                {{post.description}}
-                {{post.rating}}
-                {{post.mobile_phone}}
-                {{post.price}}
-                <button class="deleteUser" (click)="deletePost(post.id)">x</button>
+<main class="posts">
+    <div class="container">
+        <h1 class="h1_users">Posts:</h1>
+            <ol class="list-group">
+                <li class="list-group-item" *ngFor="let post of posts.items">
+                    <h4 class="list-group-item-heading">{{post.name}}</h4>
+                    <p class="list-group-item-text">
+                        Type: {{post.type_content}}
+                    </p>
+                    <p class="list-group-item-text">
+                        Destination: {{post.destination}}
+                    </p>
+                    <p class="list-group-item-text">
+                        Smoking: {{post.smoking}}
+                    </p>
+                    <p class="list-group-item-text">
+                        Wi_fi: {{post.wi_fi}}
+                    </p>
+                    <p class="list-group-item-text">
+                        Description: {{post.description}}
+                    </p>
+                    <p class="list-group-item-text">
+                        Rating: {{post.rating}}
+                    </p>
+                    <p class="list-group-item-text">
+                        Mobile phone: {{post.mobile_phone}}
+                    </p>
+                    <p class="list-group-item-text">
+                        Price: {{post.price}}
+                    </p>
+                <button class="badge badge-danger badge-pill" (click)="deletePost(post.id)">x</button>
             </li>
-        </ul>
+        </ol>
     </div>
+    <div class="container">
+            <button class="button" (click)="showForm()">Add post:</button>
+            <form *ngIf=isAdded>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="type">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="destination">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="description">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="rating">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="mobile phone">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="price">
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="wi_fi"> WiFi</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="smoking"> Smoking</label>
+                </div>
+                <button class="btn">Add</button>
+            </form>
+        </div>
 </main>

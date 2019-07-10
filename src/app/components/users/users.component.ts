@@ -19,10 +19,6 @@ export class UsersComponent implements OnInit {
     this.isAdded = !this.isAdded;
   }
 
-  addUser(userName, password) {
-    localStorage.setItem(userName, password);
-  }
-
   showUsers() {
     this._usersService.getUsers()
       .subscribe(data => this.users = data);

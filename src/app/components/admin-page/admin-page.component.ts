@@ -9,9 +9,14 @@ import { UsersService } from '../../../services/users.service';
 export class AdminPageComponent implements OnInit {
 
   public posts = {};
+  isAdded:boolean = false;
 
   constructor(private _usersService: UsersService) { }
 
+  showForm() {
+    this.isAdded = !this.isAdded;
+  }
+  
   showPosts() {
     this._usersService.getPosts()
     .subscribe(data => this.posts = data);
@@ -22,6 +27,10 @@ export class AdminPageComponent implements OnInit {
       .subscribe(()=> {
         this.showPosts();
     });
+  }
+
+  addNewPost(newPost) {
+    this._usersService.addPost(newPost).subscribe();
   }
 
   ngOnInit() {

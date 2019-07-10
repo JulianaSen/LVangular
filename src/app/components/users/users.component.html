@@ -1,30 +1,33 @@
 <main class="users">
-    <div class="displayUsers">
-        <!-- <button class="button" (click)="displayUsers()">Display users</button> -->
-        <!-- <ul class="usersUl">
-            <li class="usersLi" *ngFor="let user of userNames">
-                {{user}}
-                <button class="deleteUser" (click)="deleteUser(user)">x</button>
-            </li>
-        </ul> -->
-
-        <button class="button">Users:</button>
-        <ul class="usersUl">
-            <li class="usersLi" *ngFor="let user of users.users">
-                {{user.first_name}}
-                {{user.last_name}}
-                {{user.username}}
-                {{user.password_hash}}
-                <button class="deleteUser" (click)="deleteUser(user.id)">x</button>
-            </li>
-        </ul>
+    <div class="container">
+        <h1 class="h1_users">Users:</h1>
+        <ol class="list-group">
+                <li class="list-group-item" *ngFor="let user of users.users">
+                    <h4 class="list-group-item-heading">{{user.username}}</h4>
+                    <p class="list-group-item-text">
+                        First name: {{user.first_name}}
+                    </p>
+                    <p class="list-group-item-text">
+                        Last name: {{user.last_name}}
+                    </p>
+                    <p class="list-group-item-text">
+                        Password: {{user.password_hash}}
+                    </p>
+                    <button class="badge badge-danger badge-pill" (click)="deleteUser(user.id)">x</button>
+                </li>
+            </ol>
     </div>
 
     <div class="addUser">
         <button class="button" (click)="showForm()">Add user</button>
-        <form *ngIf=isAdded class="addUserForm" (submit)="addUser(user.value, pass.value)">
+        <form *ngIf=isAdded class="addUserForm">
+            <input type="text" placeholder="first name" #user>
+            <input type="text" placeholder="last name" #user>
             <input type="text" placeholder="userName" #user>
             <input type="text" placeholder="password" #pass>
+            <div class="checkbox">
+                <label><input type="checkbox" name="admin"> Admin</label>
+            </div>
             <button class="btn" type="submit">Add</button>
         </form>
     </div>
