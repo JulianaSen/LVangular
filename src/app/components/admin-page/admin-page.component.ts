@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../../services/users.service';
+import { IContent } from 'src/app/Interfaces/content';
 
 @Component({
   selector: 'app-admin-page',
@@ -8,7 +9,7 @@ import { UsersService } from '../../../services/users.service';
 })
 export class AdminPageComponent implements OnInit {
 
-  public posts = {};
+  public posts = [];
   isAdded:boolean = false;
 
   constructor(private _usersService: UsersService) { }
@@ -29,8 +30,9 @@ export class AdminPageComponent implements OnInit {
     });
   }
 
-  addNewPost(newPost) {
-    this._usersService.addPost(newPost).subscribe();
+  addNewPost(newPost: IContent) {
+    this._usersService.addPost(newPost).
+      subscribe(post => this.posts.push(post));;
   }
 
   ngOnInit() {

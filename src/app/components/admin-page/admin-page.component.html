@@ -29,6 +29,9 @@
                         Mobile phone: {{post.mobile_phone}}
                     </p>
                     <p class="list-group-item-text">
+                        Image url: {{post.image}}
+                    </p>
+                    <p class="list-group-item-text">
                         Price: {{post.price}}
                     </p>
                 <button class="badge badge-danger badge-pill" (click)="deletePost(post.id)">x</button>
@@ -39,36 +42,45 @@
             <button class="button" (click)="showForm()">Add post:</button>
             <form *ngIf=isAdded>
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="name">
+                    <input class="form-control" type="text" name="name" placeholder="name" [(ngModel)]="posts.name">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="type">
+                    <input class="form-control" type="text" name="type_content" placeholder="type" [(ngModel)]="posts.type_content">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="subtype">
+                    <input class="form-control" type="text" name="whatIsIt" placeholder="subtype" [(ngModel)]="posts.whatIsIt">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="destination">
+                    <input class="form-control" type="text" name="destination" placeholder="destination" [(ngModel)]="posts.destination">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="description">
+                    <input class="form-control" type="text" name="description" placeholder="description" [(ngModel)]="posts.description">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="rating">
+                    <input class="form-control" type="text" name="rating" placeholder="rating" [(ngModel)]="posts.rating">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="mobile phone">
+                    <input class="form-control" type="text" name="mobile_phone" placeholder="mobile phone" [(ngModel)]="posts.mobile_phone">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="price">
+                    <input class="form-control" type="text" name="price" placeholder="price" [(ngModel)]="posts.price">
                 </div>
-                <div class="checkbox">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="image" placeholder="image" [(ngModel)]="posts.image">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="wi_fi" placeholder="image" [(ngModel)]="posts.wi_fi">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="smoking" placeholder="image" [(ngModel)]="posts.smoking">
+                </div>
+                <!-- <div class="checkbox">
                     <label><input type="checkbox" name="wi_fi"> WiFi</label>
                 </div>
                 <div class="checkbox">
                     <label><input type="checkbox" name="smoking"> Smoking</label>
-                </div>
-                <button class="btn">Add</button>
+                </div> -->
+                <button class="btn" (click)="addNewPost(posts)">Add</button>
             </form>
         </div>
 </main>

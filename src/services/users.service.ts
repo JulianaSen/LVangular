@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IUser } from '../app/Interfaces/users';
 import { IContent } from '../app/Interfaces/content';
 import { Observable } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +39,6 @@ export class UsersService {
   }
 
   addPost(post: IContent): Observable<IContent> {
-    return this.http.post<IContent>(this._urlContent, post);
+    return this.http.post<IContent>(this._urlContent, JSON.stringify(post), httpOptions);
   }
 }
