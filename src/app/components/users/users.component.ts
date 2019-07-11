@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Key } from 'protractor';
 import { UsersService } from '../../../services/users.service';
 
 @Component({
@@ -11,7 +10,14 @@ import { UsersService } from '../../../services/users.service';
 export class UsersComponent implements OnInit {
 
   isAdded:boolean = false;
-  public users = {};
+  public users = [];
+  public newUser = {
+    id: 4, 
+    first_name: "julia", 
+    last_name: "sen",
+    username: "js",
+    password_hash: "qwer"
+  };
 
   constructor(private _usersService: UsersService) { }
 
@@ -31,7 +37,13 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  createUser() {
+    this._usersService.addUser(this.newUser).subscribe(user => this.users.push(user));
+    console.log(this.users);
+  }
+
   ngOnInit() {
     this.showUsers();
+    this.createUser();
   }
 }
