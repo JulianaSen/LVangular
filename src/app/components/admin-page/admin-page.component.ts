@@ -23,6 +23,18 @@ export class AdminPageComponent implements OnInit {
   price: number;
   whatIsIt: string;
 
+  checkHotel() {
+    return this.type_content == "hotel";
+  }
+
+  checkRestaurant() {
+    return this.type_content == "restaurant";
+  }
+
+  checkEntertainment() {
+    return this.type_content == "entertainment";
+  }
+
   public newPost = {
     type_content: "",
     name: "",

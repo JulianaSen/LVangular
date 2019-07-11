@@ -12,14 +12,14 @@ export class UsersComponent implements OnInit {
   isAdded:boolean = false;
   public users = [];
   
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   username: string;
   password: string;
   
   public newUser = {
-    first_name: "",
-    last_name: "",
+    firstName: "",
+    lastName: "",
     username: "",
     password: ""
   };
@@ -43,8 +43,8 @@ export class UsersComponent implements OnInit {
   }
 
   createUser() {
-    this.newUser.first_name = this.first_name;
-    this.newUser.last_name = this.last_name;
+    this.newUser.firstName = this.firstName;
+    this.newUser.lastName = this.lastName;
     this.newUser.username = this.username;
     this.newUser.password = this.password;
 

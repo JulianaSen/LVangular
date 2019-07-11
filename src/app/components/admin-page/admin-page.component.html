@@ -10,14 +10,36 @@
                 <option>entertainment</option>
             </select>
     
-            <label for="whatIsIt">Subtype: </label>
-            <select name="whatIsIt" [(ngModel)]="whatIsIt">
-                <option>Hotel</option>
-                <option>Motel</option>
-                <option>Flat</option>
-                <option>Hostel</option>
-            </select>
+            <div *ngIf=checkHotel() class="check">
+                <label for="whatIsIt">Subtype: </label>
+                <select name="whatIsIt" [(ngModel)]="whatIsIt">
+                    <option>Hotel</option>
+                    <option>Motel</option>
+                    <option>Flat</option>
+                    <option>Hostel</option>
+                </select>
+            </div>
     
+            <div *ngIf=checkRestaurant() class="check">
+                <label for="whatIsIt">Subtype: </label>
+                <select name="whatIsIt" [(ngModel)]="whatIsIt">
+                    <option>Restaurants</option>
+                    <option>Cafes</option>
+                    <option>Snack-bars</option>
+                    <option>Pubs</option>
+                </select>
+            </div>
+    
+            <div *ngIf=checkEntertainment() class="check">
+                <label for="whatIsIt">Subtype: </label>
+                <select name="whatIsIt" [(ngModel)]="whatIsIt">
+                    <option>Cinema</option>
+                    <option>Theatre</option>
+                    <option>Active Rest</option>
+                    <option>Passive Rest</option>
+                </select>
+            </div>
+
             <label for="wi_fi">WiFi: </label>
             <select name="wi_fi" [(ngModel)]="wi_fi">
                 <option>true</option>

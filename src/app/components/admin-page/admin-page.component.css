@@ -6,6 +6,11 @@
     margin: 30px;
 }
 
+.check {
+    display: flex;
+    flex-direction: column;
+}
+
 .h1_users {
     margin-top: 30px;
 }
