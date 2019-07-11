@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../../services/users.service';
-import { IContent } from 'src/app/Interfaces/content';
 
 @Component({
   selector: 'app-admin-page',
@@ -9,8 +8,34 @@ import { IContent } from 'src/app/Interfaces/content';
 })
 export class AdminPageComponent implements OnInit {
 
-  public posts = [];
   isAdded:boolean = false;
+  public posts = [];
+
+  type_content: string;
+  name: string;
+  destination: string;
+  smoking: boolean;
+  wi_fi: boolean;
+  description: string;
+  rating: number;
+  mobile_phone: number;
+  image: string;
+  price: number;
+  whatIsIt: string;
+
+  public newPost = {
+    type_content: "",
+    name: "",
+    smoking: false,
+    wi_fi: false,
+    description: "",
+    rating: 0,
+    mobile_phone: 0,
+    image: "",
+    price: 0,
+    destination: "",
+    whatIsIt: ""
+  };
 
   constructor(private _usersService: UsersService) { }
 
@@ -29,20 +54,27 @@ export class AdminPageComponent implements OnInit {
         this.showPosts();
     });
   }
+  
+  createPost() {
+    this.newPost.type_content = this.type_content;
+    this.newPost.name = this.name;
+    this.newPost.smoking = JSON.parse(this.smoking.toString());
+    this.newPost.wi_fi = JSON.parse(this.wi_fi.toString());
+    this.newPost.description = this.description;
+    this.newPost.rating = this.rating;
+    this.newPost.mobile_phone = this.mobile_phone;
+    this.newPost.image = this.image;
+    this.newPost.price = this.price;
+    this.newPost.destination = this.destination;
+    this.newPost.whatIsIt = this.whatIsIt;
 
-<<<<<<< HEAD
-  addNewPost(newPost: IContent) {
-    this._usersService.addPost(newPost).
-      subscribe(post => this.posts.push(post));;
+    this._usersService.addPost(this.newPost)
+      .subscribe(()=> {
+        this.showPosts();
+    });
   }
-=======
-  // addNewPost(newPost) {
-  //   this._usersService.addPost(newPost).subscribe();
-  // }
->>>>>>> 43d9bef7f9a773226b43c81081147e1393b83f7b
 
   ngOnInit() {
     this.showPosts();
   }
-
 }

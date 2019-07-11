@@ -1,4 +1,60 @@
 <main class="posts">
+
+    <div class="addPost">
+        <button class="button" (click)="showForm()">Add post</button>
+        <form *ngIf=isAdded class="form">
+            <label for="type_content">Type content: </label>
+            <select name="type_content" [(ngModel)]="type_content">
+                <option>hotel</option>
+                <option>restaurant</option>
+                <option>entertainment</option>
+            </select>
+    
+            <label for="whatIsIt">Subtype: </label>
+            <select name="whatIsIt" [(ngModel)]="whatIsIt">
+                <option>Hotel</option>
+                <option>Motel</option>
+                <option>Flat</option>
+                <option>Hostel</option>
+            </select>
+    
+            <label for="wi_fi">WiFi: </label>
+            <select name="wi_fi" [(ngModel)]="wi_fi">
+                <option>true</option>
+                <option>false</option>
+            </select>
+    
+            <label for="smoking">Smoking: </label>
+            <select name="smoking" [(ngModel)]="smoking">
+                <option>true</option>
+                <option>false</option>
+            </select>
+    
+            <label for="name">Name: </label>
+            <input name="name" [(ngModel)]="name">
+    
+            <label for="description">Description: </label>
+            <input name="description" [(ngModel)]="description">
+    
+            <label for="rating">Rating: </label>
+            <input name="rating" [(ngModel)]="rating">
+    
+            <label for="mobile_phone">Mobile phone: </label>
+            <input name="mobile_phone" [(ngModel)]="mobile_phone">
+    
+            <label for="image">Image url: </label>
+            <input name="image" [(ngModel)]="image">
+    
+            <label for="price">Price: </label>
+            <input name="price" [(ngModel)]="price">
+    
+            <label for="destination">Destination: </label>
+            <input name="destination" [(ngModel)]="destination">
+                    
+            <button class="btn" type="submit" (click)="createPost()">Add</button>
+        </form>
+    </div>
+
     <div class="container">
         <h1 class="h1_users">Posts:</h1>
             <ol class="list-group">
@@ -38,49 +94,4 @@
             </li>
         </ol>
     </div>
-    <div class="container">
-            <button class="button" (click)="showForm()">Add post:</button>
-            <form *ngIf=isAdded>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="name" placeholder="name" [(ngModel)]="posts.name">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="type_content" placeholder="type" [(ngModel)]="posts.type_content">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="whatIsIt" placeholder="subtype" [(ngModel)]="posts.whatIsIt">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="destination" placeholder="destination" [(ngModel)]="posts.destination">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="description" placeholder="description" [(ngModel)]="posts.description">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="rating" placeholder="rating" [(ngModel)]="posts.rating">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="mobile_phone" placeholder="mobile phone" [(ngModel)]="posts.mobile_phone">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="price" placeholder="price" [(ngModel)]="posts.price">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="image" placeholder="image" [(ngModel)]="posts.image">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="wi_fi" placeholder="image" [(ngModel)]="posts.wi_fi">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="smoking" placeholder="image" [(ngModel)]="posts.smoking">
-                </div>
-                <!-- <div class="checkbox">
-                    <label><input type="checkbox" name="wi_fi"> WiFi</label>
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" name="smoking"> Smoking</label>
-                </div> -->
-                <button class="btn" (click)="addNewPost(posts)">Add</button>
-            </form>
-        </div>
 </main>

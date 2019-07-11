@@ -11,12 +11,17 @@ export class UsersComponent implements OnInit {
 
   isAdded:boolean = false;
   public users = [];
+  
+  first_name: string;
+  last_name: string;
+  username: string;
+  password: string;
+  
   public newUser = {
-    id: 4, 
-    first_name: "julia", 
-    last_name: "sen",
-    username: "js",
-    password_hash: "qwer"
+    first_name: "",
+    last_name: "",
+    username: "",
+    password: ""
   };
 
   constructor(private _usersService: UsersService) { }
@@ -38,12 +43,18 @@ export class UsersComponent implements OnInit {
   }
 
   createUser() {
-    this._usersService.addUser(this.newUser).subscribe(user => this.users.push(user));
-    console.log(this.users);
+    this.newUser.first_name = this.first_name;
+    this.newUser.last_name = this.last_name;
+    this.newUser.username = this.username;
+    this.newUser.password = this.password;
+
+    this._usersService.addUser(this.newUser)
+      .subscribe(()=> {
+        this.showUsers();
+      });
   }
 
   ngOnInit() {
     this.showUsers();
-    this.createUser();
   }
 }
